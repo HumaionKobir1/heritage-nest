@@ -2,7 +2,7 @@
 Theme Name: Heritage-Nest
 Theme URI: 
 Design by: 
-Developed by: Flash Coder Studio
+Developed by: Humaion Kobir
 Version: 1.0
 License: 
 Tags: 
