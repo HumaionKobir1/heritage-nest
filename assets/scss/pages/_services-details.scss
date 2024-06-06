@@ -1,0 +1,165 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+/*=====================
+    tob heading 
+=======================*/
+
+.top-heading{
+    .main-wraper{
+        @include d-flex;
+        border-bottom: 1px solid $color-border;
+        padding-bottom: 10px;
+        gap: 50px;
+        .content-left{
+            .text-2{
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 24px;
+                letter-spacing: -0.01em;
+                color: #010101;
+            }
+            .text-para-1{
+                @include d-flex;
+                @include align-items;
+                gap: 10px;
+                margin-top: 10px;
+                font-weight: 400;
+                font-size: 18px;
+                line-height: 24px;
+                color: #606060;
+                i{
+                    color: #EE6611;
+                    font-weight: 800;
+                }
+            }
+        }
+        .price{
+            .text-2{
+                font-weight: 800;
+                font-size: 28px;
+                line-height: 32px;
+                letter-spacing: -0.01em;
+                color: #010101;
+            }
+        }
+    }
+}
+
+
+.service-details{
+    .content-left{
+        img{
+            width: 100%;
+        }
+        .overview{
+            box-sizing: border-box;
+            padding: 24px;
+            background: #F9FAFB;
+            border: 1px solid #E5E7EB;
+            border-radius: 8px;
+            .text-2{
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 28px;
+                color: #000000;
+            }
+            .flat-details{
+                box-sizing: border-box;
+                padding: 16px;
+                background: #FFFFFF;
+                box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                ul{
+                    @include d-flex;
+                    @include justify-content-between;
+                    @include align-items;
+                    gap: 30;
+                    li{
+                        @include d-flex;
+                        @include align-items;
+                        gap: 20px;
+                        img{
+                            width: 20px;
+                            height: 20px;
+                        }
+                    }
+                }
+            }
+            .cerpet-area, .floor-area, .transiction, .lift-area{
+                .text-para-2{
+                    font-weight: 500;
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: #101010;
+                }
+            }
+        }
+    }
+    .content-right{
+        .property-value{
+            padding: 24px;
+            background: #ECF5FF;
+            .text-2{
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 32px;
+                color: #252323;
+                margin-top: 8px;
+            }
+            input{
+                width: 100%;
+                border-radius: 5px;
+                font-weight: 600;
+                color: black;
+            }
+            .progress-value{
+                position: relative;
+                width: 100%;
+                height: 24px;
+                border-radius: 100px;
+                background: #EEEEEE;
+                z-index: 1;
+                &::after{
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 24px;
+                    height: 24px;
+                    background: #EE6611;
+                    border-radius: 100px;
+                    cursor: pointer;
+                    z-index: -1;
+                }
+                &::before{
+                    position: absolute;
+                    content: "";
+                    right: 0;
+                    top: 0;
+                    width: 24px;
+                    height: 24px;
+                    background: #EE6611;
+                    border-radius: 100px;
+                    cursor: pointer;
+                    z-index: -1;
+                }
+            }
+            .price{
+                @include d-flex;
+                @include justify-content-between;
+                @include align-items;
+                margin-top: 8px;
+                .text-para-2{
+                    font-weight: 500;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #252323;
+                }
+            }
+        }
+        iframe{
+            width: 100%;
+            height: 422px;
+        }
+    }
+}

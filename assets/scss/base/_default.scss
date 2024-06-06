@@ -1,0 +1,185 @@
+/*====================
+	 Default
+======================*/
+
+*,
+html,
+body,
+div,
+span,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+address,
+big,
+cite,
+code,
+del,
+img,
+q,
+small,
+strong,
+sub,
+sup,
+tt,
+b,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+table,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+footer,
+header,
+menu,
+nav,
+section,
+mark,
+audio,
+video,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+*,
+::before,
+::after {
+  outline: none;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section {
+  display: block;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: middle;
+}
+
+iframe {
+  max-width: 100%;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+table {
+  width: 100%;
+  max-width: 100%;
+}
+
+table th {
+  vertical-align: top;
+}
+
+pre {
+  display: block;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+textarea {
+  resize: initial;
+}
+
+b,
+strong {
+  font-weight: 700;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+input,
+.uneditable-input,
+select,
+textarea {
+  border-radius: 0;
+  font-size: 14px;
+  min-width: auto;
+  letter-spacing: 1.4px;
+  box-sizing: border-box;
+  line-height: 1.6;
+  height: 50px;
+  padding: 0px 20px;
+  vertical-align: middle;
+}
+
+input:focus,
+.uneditable-input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 0em rgba(0, 123, 255, 0.25);
+}
+
+input[type="submit"] {
+  padding: 13px 15px;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  border: none;
+}
+
+input[type="submit"],
+input[type="button"] {
+  cursor: pointer;
+}

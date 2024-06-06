@@ -1,0 +1,74 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.breadcum {
+  &.v1 {
+    position: relative;
+    padding: 240px 0px 185px 0px;
+    text-align: center;
+    background: $color-blue;
+    overflow: hidden;
+    z-index: 1;
+    h2 {
+      font-size: 55px;
+      line-height: 65px;
+      font-weight: 600;
+      & ~ ul {
+        margin-top: 40px;
+      }
+    }
+    ul {
+      @include d-flex;
+      @include align-items;
+      @include justify-content-center;
+      gap: 5px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+    li {
+      color: $color-black;
+      font-size: 16px;
+      font-weight: 700;
+      & ~ li {
+        @include d-flex;
+        @include align-items;
+        gap: 5px;
+        &::before {
+          content: ":";
+          color: $color-lgreen;
+        }
+      }
+      a {
+        color: $color-lgreen;
+      }
+    }
+    .bg-shap-1,
+    .bg-shap-2,
+    .bg-shap-3 {
+      position: absolute;
+      top: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: center;
+      z-index: -1;
+    }
+    .bg-shap-1 {
+      width: 70%;
+      height: 200%;
+      left: 50%;
+      @include transform(translate(-50%, -50%));
+    }
+    .bg-shap-2 {
+      width: 340px;
+      height: 340px;
+      left: -100px;
+      @include transform(translateY(-50%));
+    }
+    .bg-shap-3 {
+      width: 348px;
+      height: 348px;
+      right: -113px;
+      @include transform(translateY(-50%));
+    }
+  }
+}

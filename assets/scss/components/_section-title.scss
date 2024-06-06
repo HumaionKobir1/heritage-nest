@@ -1,0 +1,372 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.section-title,
+.section-title-center,
+.section-title-white,
+.section-title-center-white {
+  .big-title {
+    text-transform: capitalize;
+  }
+  &.v1,
+  &.v3,
+  &.v5,
+  &.v9 {
+    .sub-title {
+      position: relative;
+      font-size: 13px;
+      line-height: 23px;
+      font-weight: 500;
+      text-transform: uppercase;
+      padding-left: 17px;
+      &::before {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 12px;
+        top: 6px;
+        left: 0;
+        border-radius: 50px;
+      }
+      &.v1 {
+        color: $color-lblue;
+        &::before {
+          background: $color-blue;
+        }
+      }
+      &.v2 {
+        color: $color-black2;
+        &::before {
+          background: $color-black2;
+        }
+      }
+      &.v3 {
+        color: $color-white;
+        &::before {
+          background: $color-white;
+        }
+      }
+      &.v4 {
+        color: $color-black2;
+        &::before {
+          background: $color-blue;
+        }
+      }
+      &.v5,
+      &.v6 {
+        padding-left: 0px;
+        &::before {
+          content: none;
+        }
+      }
+      &.v6 {
+        color: $color-white;
+      }
+      &.v7 {
+        color: $color-dGreen;
+        font-weight: 700;
+        &::before {
+          background: $color-dGreen;
+        }
+      }
+      &.v8 {
+        color: $color-lime;
+        font-weight: 700;
+        &::before {
+          background: $color-lime;
+        }
+      }
+      &.v9 {
+        padding-left: 22px;
+        color: $color-gBlack3;
+        font-weight: 700;
+        &::before {
+          border-radius: 0px;
+          background: $color-bluGradient;
+        }
+      }
+      &.v10,
+      &.v11 {
+        padding-left: 42px;
+        font-weight: 400;
+        &::before {
+          top: 15px;
+          width: 32px;
+          height: 2px;
+          border-radius: 0px;
+        }
+      }
+      &.v10 {
+        color: $color-white;
+        &::before {
+          background: $color-white;
+        }
+      }
+      &.v11 {
+        color: $color-gBlack12;
+        &::before {
+          background: linear-gradient(
+            90deg,
+            #30d7f1 -18.49%,
+            #79fa4b 48.96%,
+            #fce344 132.87%
+          );
+        }
+      }
+      &.v12 {
+        padding-left: 0;
+        color: $color-dGreen8;
+        font-weight: 700;
+        &::before {
+          display: none;
+        }
+      }
+      &.v13 {
+        color: $color-lgreen;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 26px;
+        padding-left: 0;
+        &::before {
+          display: none;
+        }
+      }
+      &.v14 {
+        color: #d9f6ef;
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 23px;
+        padding-left: 0;
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+  &.v1 {
+    .big-title {
+      font-weight: 600;
+      font-size: 64px;
+      line-height: 74px;
+      & ~ .title-para {
+        margin-top: 25px;
+      }
+    }
+    .sub-title ~ .big-title {
+      margin-top: 10px;
+    }
+    .title-para.v2 {
+      color: $color-gBlack3;
+    }
+  }
+  &.v2 {
+    .big-title {
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 55px;
+      line-height: 74px;
+      & ~ .title-para {
+        margin-top: 25px;
+      }
+    }
+  }
+  &.v3 {
+    .big-title {
+      font-weight: 700;
+      font-size: 60px;
+      line-height: 70px;
+      & ~ .title-para {
+        margin-top: 36px;
+      }
+    }
+    .sub-title ~ .big-title {
+      margin-top: 20px;
+    }
+    .title-para {
+      color: $color-gBlack9;
+      font-weight: 500;
+    }
+  }
+  &.v4,
+  &.v7 {
+    .big-title {
+      font-weight: 700;
+      font-size: 55px;
+      line-height: 80px;
+      & ~ .title-para {
+        margin-top: 23px;
+      }
+    }
+    .sub-title ~ .big-title {
+      margin-top: 20px;
+    }
+    .title-para {
+      font-size: 20px;
+      line-height: 30px;
+      color: $color-gBlack11;
+      font-weight: 500;
+    }
+    .bg-text-color {
+      color: $color-white;
+      padding: 23px 25px 35px 20px;
+      background-repeat: no-repeat;
+      background-size: 100%, 100%;
+      background-position: center;
+    }
+  }
+  &.v5 {
+    .big-title {
+      font-weight: 700;
+      font-size: 50px;
+      line-height: 60px;
+      & ~ .title-para {
+        margin-top: 23px;
+      }
+    }
+    .sub-title ~ .big-title {
+      margin-top: 35px;
+    }
+    .title-para {
+      font-size: 20px;
+      line-height: 30px;
+      color: $color-gBlack11;
+      font-weight: 500;
+    }
+  }
+  &.v6 {
+    .big-title {
+      font-weight: 700;
+      font-size: 55px;
+      letter-spacing: -0.9px;
+      line-height: 70px;
+      & ~ .title-para {
+        margin-top: 32px;
+      }
+    }
+    .sub-title ~ .big-title {
+      margin-top: 20px;
+    }
+    .title-para {
+      font-size: 16px;
+      line-height: 26px;
+      color: $color-gBlack12;
+      font-weight: 400;
+    }
+    & ~ .all-btns {
+      margin-top: 51px;
+    }
+  }
+  &.v7 {
+    .title-para {
+      color: $color-white;
+    }
+  }
+  &.v8 {
+    .big-title {
+      font-weight: 400;
+      font-size: 55px;
+      letter-spacing: -0.4px;
+      line-height: 70px;
+      & ~ .title-para {
+        margin-top: 30px;
+      }
+    }
+  }
+  &.v9 {
+    .sub-title ~ .big-title {
+      margin-top: 15px;
+    }
+    .big-title {
+      font-weight: 700;
+      font-size: 65px;
+      line-height: 75px;
+      color: $color-dGreen8;
+      .text-color {
+        color: $color-green5;
+      }
+      & ~ .title-para {
+        margin-top: 20px;
+      }
+    }
+    .title-para {
+      color: $color-gBlack18;
+    }
+  }
+  & ~ .row,
+  & ~ .counter-item {
+    margin-top: 60px;
+  }
+  & ~ .all-btns {
+    margin-top: 40px;
+  }
+}
+.title-left-right-start,
+.title-left-right-center,
+.title-left-right-end,
+.all-btns,
+.right-content ul {
+  @include d-flex;
+  @include flex-wrap;
+}
+.title-left-right-start,
+.title-left-right-center,
+.title-left-right-end {
+  @include justify-content-between;
+  gap: 30px;
+  .prev-btn,
+  .next-btn {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 15px;
+    line-height: 62px;
+    color: $color-black;
+    border-radius: 50px;
+    background: $color-white;
+    &:hover {
+      color: $color-blue;
+      background: $color-black;
+    }
+  }
+  .right-content ul {
+    gap: 30px;
+  }
+}
+.title-left-right-start {
+  @include align-items-start;
+}
+.title-left-right-center {
+  @include align-items;
+}
+.title-left-right-end {
+  @include align-items-end;
+}
+
+.section-title-center,
+.section-title-center-white {
+  text-align: center;
+  .sub-title,
+  .big-title,
+  .title-para {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .sub-title {
+    display: inline-block;
+  }
+}
+
+.section-title-white,
+.section-title-center-white {
+  .big-title,
+  .title-para,
+  &.v3 .title-para,
+  &.v9 .sub-title.v12,
+  &.v9 .big-title {
+    color: $color-white;
+  }
+  &.v9 .title-para {
+    color: $color-gBlack3;
+  }
+}

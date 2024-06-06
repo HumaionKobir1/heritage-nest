@@ -1,0 +1,19 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.bg-cover,
+.bg-cover-top,
+.bg-cover-center,
+.bg-cover-bottom {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.bg-cover-top {
+  background-position: top;
+}
+.bg-cover-center {
+  background-position: center;
+}
+.bg-cover-bottom {
+  background-position: bottom;
+}

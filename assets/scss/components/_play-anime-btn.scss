@@ -1,0 +1,133 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.play-btn.v1,
+.play-btn.v2,
+.play-btn.v3,
+.play-btn.v4,
+.play-btn.v5,
+.bouns-anime {
+  position: relative;
+  text-align: center;
+  width: 112px;
+  height: 112px;
+  font-size: 28px;
+  line-height: 103px;
+  border-radius: 100px;
+  z-index: 1;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    z-index: -1;
+    user-select: none;
+    pointer-events: none;
+    animation: b-zoom 4s ease-out infinite;
+  }
+  @keyframes b-zoom {
+    0% {
+      opacity: 0.8;
+      @include transform(scale(1));
+    }
+    100% {
+      @include transform(scale(1.3));
+      opacity: 0;
+    }
+  }
+}
+
+.play-btn {
+  &.v1,
+  &.v3,
+  &.v4,
+  &.v5 {
+    color: $color-tr;
+    &,
+    &::before {
+      @include box-shadow(0 0 45px 0px rgba(0, 0, 0, 0.09));
+    }
+  }
+  &.v1 {
+    background: $color-blue;
+    -webkit-text-stroke: 2px $color-black;
+    &::before {
+      border: 1px solid $color-blue;
+    }
+    &.bouns-anime::before {
+      background: $color-blue;
+    }
+    &:hover {
+      color: $color-blue;
+    }
+  }
+  &.v2 {
+    color: $color-white;
+    background: $color-black;
+    &::before {
+      border: 1px solid $color-black;
+    }
+    &.bouns-anime::before {
+      background: $color-black;
+    }
+    &:hover {
+      background: $color-blue;
+      &::before {
+        border: 1px solid $color-blue;
+      }
+    }
+  }
+  &.v3 {
+    background: $color-lime;
+    -webkit-text-stroke: 2px $color-black;
+    &::before {
+      border: 1px solid $color-lime;
+    }
+    &.bouns-anime::before {
+      background: $color-lime;
+    }
+    &:hover {
+      color: $color-lime;
+    }
+  }
+  &.v4 {
+    background: $color-white;
+    -webkit-text-stroke: 2px $color-black;
+    &::before {
+      border: 1px solid $color-white;
+    }
+    &.bouns-anime::before {
+      background: $color-white;
+    }
+    &:hover {
+      -webkit-text-stroke: 2px $color-purple;
+    }
+  }
+  &.v5 {
+    background: $color-white;
+    -webkit-text-stroke: 2px $color-black;
+    &::before {
+      border: 1px solid $color-white;
+    }
+    &.bouns-anime::before {
+      background: $color-white;
+    }
+    &:hover {
+      -webkit-text-stroke: 2px $color-lBlue5;
+    }
+  }
+}
+
+.bouns-anime {
+  background: $color-white;
+  &,
+  &::before {
+    @include box-shadow(0 0 10px 0px rgba(0, 0, 0, 0.09));
+  }
+  &::before {
+    background: $color-white;
+  }
+}

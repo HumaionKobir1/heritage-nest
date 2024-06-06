@@ -1,0 +1,58 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.star-mark {
+  @include d-flex;
+  @include align-items;
+  gap: 8px;
+  .my-icon {
+    font-size: 19px;
+    color: $color-orange4;
+  }
+  &.star-1 li:nth-child(1) .my-icon::before,
+  &.star-2 li:nth-child(1) .my-icon::before,
+  &.star-2 li:nth-child(2) .my-icon::before,
+  &.star-3 li:nth-child(1) .my-icon::before,
+  &.star-3 li:nth-child(2) .my-icon::before,
+  &.star-3 li:nth-child(3) .my-icon::before,
+  &.star-4 li:nth-child(1) .my-icon::before,
+  &.star-4 li:nth-child(2) .my-icon::before,
+  &.star-4 li:nth-child(3) .my-icon::before,
+  &.star-4 li:nth-child(4) .my-icon::before,
+  &.star-5 li:nth-child(1) .my-icon::before,
+  &.star-5 li:nth-child(2) .my-icon::before,
+  &.star-5 li:nth-child(3) .my-icon::before,
+  &.star-5 li:nth-child(4) .my-icon::before,
+  &.star-5 li:nth-child(5) .my-icon::before {
+    content: "\e955";
+  }
+}
+
+// back to top style scss
+
+.back-to-top {
+  a {
+    position: fixed;
+    right: 50px;
+    bottom: 30px;
+    height: 46px;
+    width: 46px;
+    font-size: 16px;
+    line-height: 48px;
+    border-radius: 50px;
+    color: var(--color-black);
+    text-align: center;
+    opacity: 0;
+    visibility: hidden;
+    background: var(--color-blue3);
+    z-index: 50;
+    -webkit-transition: all 200ms linear;
+    transform: translateY(15px);
+    transition: all 200ms linear;
+  }
+  &.show a {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0px);
+  }
+}

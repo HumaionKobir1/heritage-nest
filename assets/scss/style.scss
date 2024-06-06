@@ -1,0 +1,31 @@
+// Abstracts
+@use "./abstracts/variables";
+@use "./abstracts/autoprefixer";
+
+// Base
+@forward "./base/normalize";
+@forward "./base/default";
+@forward "./base/typography";
+
+// Components
+@forward "./components/section-title";
+@forward "./components/buttons";
+@forward "./components/play-anime-btn";
+@forward "./components/check-mark-list";
+@forward "./components/star-mark";
+@forward "./components/my-select";
+@forward "./components/slider-default";
+@forward "./components/bg-cover";
+@forward "./components/breadcum";
+
+// Layout
+@forward "./layout/header";
+
+// Pages
+@forward "./pages/home-1";
+@forward "./pages/home-2";
+@forward "./pages/about";
+@forward "./pages/services-details";
+
+// Layout
+@forward "./layout/footer";

@@ -1,0 +1,68 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/autoprefixer" as *;
+
+.my-select {
+  position: relative;
+  display: inline-block;
+  .current {
+    position: relative;
+    padding: 0px 40px 0px 20px;
+    height: 50px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    border-radius: 5px;
+    border: 1px solid #babcbd;
+    letter-spacing: 1.4px;
+    color: $color-gBlack;
+    background: $color-white;
+    &::before {
+      position: absolute;
+      font-size: 10px;
+      top: 50%;
+      right: 20px;
+      content: "\e901";
+      color: #6beedd;
+      font-family: "icomoon";
+      -moz-osx-font-smoothing: grayscale;
+      @include transform(translateY(-50%));
+      @include transition;
+    }
+    &.open::before {
+      @include transform(translateY(-50%) rotate(180deg));
+    }
+  }
+  .list {
+    position: absolute;
+    width: 100%;
+    top: 110%;
+    @include d-flex;
+    @include flex-direction-column;
+    box-shadow: 0 0 30px rgb(0 0 0 / 9%);
+    background: $color-white;
+    opacity: 0;
+    visibility: hidden;
+    @include transition;
+    z-index: 2;
+    &.open {
+      top: 100%;
+      opacity: 1;
+      visibility: visible;
+    }
+    li {
+      cursor: pointer;
+      padding: 10px 20px;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 24px;
+      @include transition;
+      &:hover {
+        padding: 10px 20px 10px 24px;
+        color: #6beedd;
+      }
+      & ~ li {
+        border-top: 1px solid $color-border4;
+      }
+    }
+  }
+}
