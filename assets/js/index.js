@@ -2,7 +2,7 @@
 Theme Name: Heritage-Nest
 Theme URI: 
 Design by: 
-Developed by: Flash Coder Studio
+Developed by: Humaion Kobir
 Version: 1.0
 License: 
 Tags: 
@@ -13,74 +13,19 @@ Tags:
 
   menuBar();
 
-  bgImg();
-
-  venoBox();
-
-  animeCounterUp();
-
-  myProgressBar();
-
-  keyBenefits();
-
   featuredSection();
   
   propartySlider();
  
   propartySlider2()
 
-  selecedSection();
-
-  AccordionPClass();
-
   testimonialSlider();
-
-  bannerSlider();
-
-  partnersLogoSlider();
-
-  commentSlider();
-
-  mySelect();
 
   backToTop();
 
-  /*====== Active Plugins ======
-
-        1 Menu Bar
-
-        2 BG Img
-
-        3 VenoBox
-
-        4 Anime Counter Up
-
-        5 My Progress Bar
-
-        6 Key Benefits
-
-        7 Featured Section
-
-        8 Section Section
-
-        9 Accordion P Class
-
-        10 Testimonial Slider
-
-        11 Banner Slider
-
-        12 Partners Logo Slider
-
-        13 Comment Slider
-
-        14 My Select
-
-        15 Back To Top
-
-    =============================*/
 
      /*=======================================
-      8 proparty Slider
+    proparty Slider
   =========================================*/
   function propartySlider(){
     let propartySlider1 = new Swiper(".proparty.v1 .slider", {
@@ -149,7 +94,7 @@ Tags:
   }
 
   /*=====================
-      1 Menu Bar
+      Menu Bar
   =======================*/
 
   $(".menu-bar .siderbar-menu .close-btn")
@@ -276,47 +221,6 @@ Tags:
     });
   }
 
-  /*=====================
-      2 BG Img
-  =======================*/
-  function bgImg() {
-    document.addEventListener("DOMContentLoaded", () => {
-      const imgElements = document.querySelectorAll("img");
-      imgElements.forEach(function (imgElement) {
-        const srcValue = imgElement.getAttribute("src");
-        imgElement.removeAttribute("src");
-        imgElement.setAttribute("data-src", srcValue);
-      });
-      const lazyLoadElements = document.querySelectorAll(
-        "[data-background], img[data-src]"
-      );
-      const lazyLoadCallback = (entries, observer) => {
-        entries.forEach((entry) => {
-          const element = entry.target;
-          if (entry.isIntersecting) {
-            if (element.hasAttribute("data-background")) {
-              element.style.backgroundImage = `url(${element.getAttribute(
-                "data-background"
-              )})`;
-              element.removeAttribute("data-background");
-            } else if (element.hasAttribute("data-src")) {
-              element.src = element.getAttribute("data-src");
-              element.removeAttribute("data-src");
-            }
-            observer.unobserve(element);
-          }
-        });
-      };
-      const observer = new IntersectionObserver(lazyLoadCallback, {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.1,
-      });
-      lazyLoadElements.forEach((element) => {
-        observer.observe(element);
-      });
-    });
-  }
 
   /*========================
       3 VenoBox
@@ -326,7 +230,7 @@ Tags:
   }
 
   /*========================
-      4 Anime Counter Up
+      Anime Counter Up
   =======================*/
   function animeCounterUp() {
     const $counterElements = $(".counter");
@@ -463,23 +367,6 @@ Tags:
       }
     });
 
-    const $progressElements = $(".my-progress-bar .progress-vale");
-
-    function animateElement() {
-      $progressElements.each(function () {
-        anime({
-          targets: this,
-          width: [
-            `${parseInt(this.dataset.progressMinWidth)}%`,
-            `${parseInt(this.dataset.progressMaxWidth)}%`,
-          ],
-          round: 1,
-          easing: "linear",
-          duration: parseInt(this.dataset.progressDuration) || 1000,
-          delay: parseInt(this.dataset.progressDelay) || 500,
-        });
-      });
-    }
 
     const isElementInViewport = (el) => {
       const rect = el.getBoundingClientRect();
@@ -505,118 +392,8 @@ Tags:
     $(window).on("scroll", handleScroll);
   }
 
-  /*========================
-        6 Key Benefits
-    =======================*/
-
-  function keyBenefits() {
-    let keyBenefitsSlider = new Swiper(".key-benefits.v1 .slider", {
-      slidesPerView: 5,
-      spaceBetween: 0,
-      loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 1,
-        },
-        575: {
-          slidesPerView: 2,
-        },
-        767: {
-          slidesPerView: 3,
-        },
-        992: {
-          slidesPerView: 5,
-        },
-      },
-    });
-  }
-
-  /*========================
-      7 Featured Section
-  =======================*/
-
-  function featuredSection() {
-    let featuredSection = new Swiper(".featured-section.v1 .slider", {
-      slidesPerView: 3,
-      spaceBetween: 92,
-      loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      navigation: {
-        nextEl: ".featured-section.v1 .prev-btn",
-        prevEl: ".featured-section.v1 .next-btn",
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 1,
-        },
-        767: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 92,
-        },
-      },
-    });
-  }
-
-  /*========================
-      8 Section Section
-  =======================*/
-  function selecedSection() {
-    let selecedSection = new Swiper(".seleced-section.v1 .slider", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      navigation: {
-        nextEl: ".seleced-section.v1 .prev-btn",
-        prevEl: ".seleced-section.v1 .next-btn",
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 1,
-        },
-        767: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        1200: {
-          slidesPerView: "auto",
-        },
-      },
-    });
-  }
-
-  /*========================
-      9 Accordion P Class
-  =======================*/
-  function AccordionPClass() {
-    $(".features-accordion button").on("click", function () {
-      $("li").removeClass("active");
-      $(this).parents("li").toggleClass("active");
-    });
-  }
-
   /*============================
-      10 Testimonial Slider
+      Testimonial Slider
   ===========================*/
 
   function testimonialSlider(){
@@ -685,238 +462,6 @@ Tags:
         disableOnInteraction: false,
         pauseOnMouseEnter: true,
       },
-    });
-  }
-
-  /*============================
-    11 Banner Slider
-  ===========================*/
-  function bannerSlider() {
-    let bannerSlider = new Swiper(".banner.v6 .slider", {
-      spaceBetween: 30,
-      loop: true,
-      speed: 1000,
-      centeredSlides: true,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: ".banner.v6 .banner-pagination",
-        clickable: true,
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 1,
-        },
-      },
-    });
-  }
-  /*============================
-    12 Partners Logo Slider
-  ===========================*/
-  function partnersLogoSlider() {
-    let partnersLogoSlider = new Swiper(".partners-logo.v1 .slider", {
-      spaceBetween: -83,
-      loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 1,
-        },
-        575: {
-          slidesPerView: 2,
-        },
-        767: {
-          slidesPerView: 2,
-        },
-        1200: {
-          slidesPerView: 4,
-        },
-      },
-    });
-
-    let partnersLogoSlider2 = new Swiper(".partners-logo.v2 .slider", {
-      spaceBetween: -155,
-      loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 1,
-        },
-        575: {
-          slidesPerView: 2,
-        },
-        767: {
-          slidesPerView: 2,
-        },
-        1200: {
-          slidesPerView: 4,
-        },
-      },
-    });
-
-    let partnersLogoSlider3 = new Swiper(".partners-logo.v3 .slider", {
-      spaceBetween: 30,
-      loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 2,
-          spaceBetween: 30,
-        },
-        575: {
-          slidesPerView: 3,
-        },
-        767: {
-          slidesPerView: 4,
-        },
-        992: {
-          slidesPerView: 5,
-        },
-        1200: {
-          slidesPerView: 7,
-        },
-      },
-    });
-
-    let partnersLogoSlider4 = new Swiper(".partners-logo.v4 .slider", {
-      spaceBetween: 30,
-      loop: true,
-      speed: 1000,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 1,
-        },
-        380: {
-          slidesPerView: 2,
-        },
-        992: {
-          slidesPerView: 4,
-        },
-        1200: {
-          slidesPerView: 6,
-        },
-      },
-    });
-  }
-
-  /*============================
-      13 Comment Slider
-  ===========================*/
-  function commentSlider() {
-    let commentSlider = new Swiper(".your-voice-area .slider", {
-      spaceBetween: 30,
-      loop: true,
-      speed: 1000,
-      centeredSlides: true,
-      autoplay: {
-        delay: 1000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
-      navigation: {
-        nextEl: ".your-voice-area .prev-btn",
-        prevEl: ".your-voice-area .next-btn",
-      },
-      breakpoints: {
-        300: {
-          slidesPerView: 1,
-        },
-      },
-    });
-  }
-
-  /*=====================
-        14 My Select
-    =======================*/
-  function mySelect() {
-    const $mySelectElements = $("select");
-
-    $mySelectElements.each((index, selectElement) => {
-      const $mySelectContainer = $("<div>").addClass("my-select");
-
-      const $selectedOption = $("<button>")
-        .addClass("current")
-        .attr("type", "button")
-        .html(selectElement.options[selectElement.selectedIndex].innerHTML);
-
-      const $optionsList = $("<ul>").addClass("list");
-
-      for (const option of selectElement.options) {
-        const $myOption = $("<li>").html(option.innerHTML);
-        $myOption.on("click", () => {
-          $selectedOption.html(option.innerHTML);
-          $optionsList.removeClass("open");
-          $selectedOption.removeClass("open");
-        });
-        $optionsList.append($myOption);
-      }
-
-      $selectedOption.on("click", () => {
-        $optionsList.toggleClass("open");
-        $selectedOption.toggleClass("open");
-      });
-
-      $mySelectContainer.append($selectedOption);
-      $mySelectContainer.append($optionsList);
-      $(selectElement).before($mySelectContainer).hide();
-
-      // Hide options when user clicks outside of select
-      $(document).on("click", (event) => {
-        if (
-          !$mySelectContainer.is(event.target) &&
-          $mySelectContainer.has(event.target).length === 0
-        ) {
-          $optionsList.removeClass("open");
-          $selectedOption.removeClass("open");
-        }
-      });
-    });
-  }
-
-  /*============================
-      15 Back To Top
-  =============================*/
-
-  function backToTop() {
-
-
-
-    let scrollTop = $(".back-to-top");
-
-    let sectionScrollHight = $("main")
-      .find(".banner,.breadcum")
-      .first()
-      .outerHeight();
-
-    $(window).scroll(function () {
-      if ($(window).scrollTop() > (sectionScrollHight / 2)) {
-        scrollTop.addClass("show");
-      } else {
-        scrollTop.removeClass("show");
-      }
-    });
-
-    scrollTop.on("click", function (e) {
-      e.preventDefault();
-      $("html, body").animate({ scrollTop: 0 }, "300");
     });
   }
 })(jQuery);
